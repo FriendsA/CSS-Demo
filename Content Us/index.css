@@ -1,0 +1,266 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+
+section {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    min-height     : 100vh;
+    background     : #095a55;
+}
+
+section::before {
+    content   : '';
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    height    : 100%;
+    width     : 50%;
+    background: #fff38e;
+}
+
+.container {
+    display      : flex;
+    position     : relative;
+    min-width    : 1100px;
+    min-height   : 550px;
+    z-index      : 1000;
+    /* background: #fff; */
+}
+
+.container .contentInfo {
+    position       : absolute;
+    top            : 40px;
+    width          : 350px;
+    height         : calc(100% - 80px);
+    z-index        : 1;
+    padding        : 40px;
+    background     : #095a55;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : column;
+    align-items    : center;
+    box-shadow     : 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.container .contentInfo h2 {
+    font-size  : 24px;
+    font-weight: 500;
+    color      : #fff;
+}
+
+.container .contentInfo ul.info {
+    margin  : 20px 0;
+    position: relative;
+}
+
+.container .contentInfo ul.info li {
+    list-style : none;
+    position   : relative;
+    display    : flex;
+    margin     : 20px 0;
+    align-items: flex-start;
+    cursor     : pointer;
+}
+
+.container .contentInfo ul.info li span:nth-child(1) {
+    width    : 30px;
+    min-width: 30px;
+}
+
+.container .contentInfo ul.info li span:nth-child(1) img {
+    max-width: 100%;
+    filter   : invert(1);
+}
+
+.container .contentInfo ul.info li span:nth-child(2) {
+    color      : #fff;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.container .contentInfo ul.sci {
+    position: relative;
+    display : flex;
+}
+
+.container .contentInfo ul.sci li {
+    list-style  : none;
+    margin-right: 15px;
+}
+
+.container .contentInfo ul.sci li a {
+    text-decoration: none;
+}
+
+.container .contentInfo ul.sci li a img {
+    filter: invert(1);
+}
+
+.container .contentForm {
+    position    : absolute;
+    padding     : 70px 50px;
+    padding-left: 250px;
+    margin-left : 150px;
+    width       : calc(100% - 150px);
+    height      : 100%;
+    background  : #fff;
+    box-shadow  : 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.container .contentForm h2 {
+    color      : #0f3959;
+    font-size  : 24px;
+    font-weight: 500;
+}
+
+.container .contentForm .formBox {
+    position       : relative;
+    display        : flex;
+    justify-content: space-between;
+    flex-wrap      : wrap;
+    padding-top    : 30px;
+}
+
+.container .contentForm .formBox .inputBox {
+    position     : relative;
+    margin-bottom: 35px;
+}
+
+.container .contentForm .formBox .inputBox.w50 {
+    width: 47%;
+}
+
+.container .contentForm .formBox .inputBox.w100 {
+    width: 100%;
+}
+
+.container .contentForm .formBox .inputBox input,
+.container .contentForm .formBox .inputBox textarea {
+    width        : 100%;
+    resize       : none;
+    padding      : 5px 0;
+    font-size    : 18px;
+    font-weight  : 300;
+    color        : #333;
+    border       : none;
+    outline      : none;
+    border-bottom: 1px solid #777;
+}
+
+.container .contentForm .formBox .inputBox textarea {
+    height: 120px;
+}
+
+.container .contentForm .formBox .inputBox span {
+    position      : absolute;
+    left          : 0;
+    padding       : 5px 0;
+    pointer-events: none;
+    font-size     : 18px;
+    font-weight   : 300;
+    transition    : 0.3s;
+}
+
+.container .contentForm .formBox .inputBox input:valid~span,
+.container .contentForm .formBox .inputBox input:focus~span,
+.container .contentForm .formBox .inputBox textarea:valid~span,
+.container .contentForm .formBox .inputBox textarea:focus~span {
+    transform     : translateY(-20px);
+    font-size     : 12px;
+    font-weight   : 500;
+    letter-spacing: 1px;
+    color         : #095a55;
+}
+
+.container .contentForm .formBox .inputBox input[type="submit"] {
+    position  : relative;
+    cursor    : pointer;
+    background: #095a55;
+    color     : #fff;
+    border    : none;
+    padding   : 12px;
+    max-width : 150px;
+}
+
+.container .contentForm .formBox .inputBox input[type="submit"]:hover {
+    background: #0d948b;
+}
+
+@media (max-width:1200px) {
+    .container {
+        width     : 90%;
+        min-width : auto;
+        margin    : 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .container .contentInfo {
+        top       : 0;
+        height    : 550px;
+        box-shadow: none;
+        position  : relative;
+    }
+
+    .container .contentForm {
+        position       : relative;
+        width          : calc(100% -350px);
+        /* padding-left: 0; */
+        margin-left    : 0;
+        padding        : 40px;
+        height         : 550px;
+        box-shadow     : none;
+    }
+}
+
+@media (max-width:991px) {
+    section {
+        background: #fff38e;
+    }
+
+    section::before {
+        display: none;
+    }
+
+    .container {
+        display       : flex;
+        flex-direction: column-reverse;
+    }
+
+    .container .contentForm {
+        width : 100%;
+        height: auto;
+    }
+
+    .container .contentInfo {
+        width         : 100%;
+        height        : auto;
+        flex-direction: row;
+    }
+}
+
+@media (max-width:600px) {
+    .container .contentForm {
+        padding: 25px;
+    }
+
+    .container .contentInfo {
+        padding       : 25px;
+        flex-direction: column;
+        align-items   : flex-start;
+    }
+
+    .container .contentInfo ul.sci {
+        margin-top: 40px;
+    }
+
+    .container .contentForm .formBox .inputBox.w50 {
+        width: 100%;
+    }
+}
